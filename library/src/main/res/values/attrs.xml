@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProgressLayout">
+        <attr name="android:textAppearance" />
+        <attr name="android:text" />
+        <attr name="progressDrawable" format="reference" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressColorList" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressLayoutTheme">
+        <attr name="progressLayoutStyle" format="reference" />
+    </declare-styleable>
+
+</resources>

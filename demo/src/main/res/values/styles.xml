@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/AppTheme.Text</item>
+        <item name="progressLayoutStyle">@style/AppTheme.ProgressLayout</item>
+    </style>
+
+    <style name="AppTheme.Text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#bc4e50</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTheme.Text.Loader" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTheme.ProgressLayout">
+        <item name="android:textAppearance">@style/AppTheme.Text.Loader</item>
+    </style>
+
+</resources>

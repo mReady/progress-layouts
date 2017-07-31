@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#263238"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#57a1c6"
+            app:progressDrawable="@drawable/loader_circle" />
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#678493"
+            app:progressDrawable="@drawable/loader_circle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2a3941" />
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#0c5c84"
+            android:text="Please wait"
+            app:progressColor="#ffffff" />
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#46778f"
+            android:textAppearance="@style/AppTheme.Text.Loader"
+            app:progressColorList="@array/loader_colors" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4190b7"
+            app:progressDrawable="@drawable/loader_logo" />
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_layout_7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#064666"
+            app:progressDrawable="@drawable/loader_logo" />
+
+    </LinearLayout>
+
+</LinearLayout>
