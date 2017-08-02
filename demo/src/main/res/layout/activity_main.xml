@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#57a1c6"
-            app:progressDrawable="@drawable/loader_circle" />
+            app:loadingIndicatorDrawable="@drawable/loader_circle" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
             android:id="@+id/progress_layout_2"
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#678493"
-            app:progressDrawable="@drawable/loader_circle" />
+            app:loadingIndicatorDrawable="@drawable/loader_circle" />
 
     </LinearLayout>
 
@@ -48,8 +48,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#0c5c84"
-            android:text="Please wait"
-            app:progressColor="#ffffff" />
+            app:loadingIndicatorColor="#ffffff"
+            app:loadingText="Please wait" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
             android:id="@+id/progress_layout_5"
@@ -58,7 +58,7 @@
             android:layout_weight="1"
             android:background="#46778f"
             android:textAppearance="@style/AppTheme.Text.Loader"
-            app:progressColorList="@array/loader_colors" />
+            app:loadingIndicatorColorScheme="@array/loader_colors" />
 
     </LinearLayout>
 
@@ -74,7 +74,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#4190b7"
-            app:progressDrawable="@drawable/loader_logo" />
+            app:loadingIndicatorDrawable="@drawable/loader_logo" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
             android:id="@+id/progress_layout_7"
@@ -82,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#064666"
-            app:progressDrawable="@drawable/loader_logo" />
+            app:loadingIndicatorDrawable="@drawable/loader_logo" />
 
     </LinearLayout>
 

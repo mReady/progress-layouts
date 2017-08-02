@@ -3,7 +3,12 @@ package net.mready.progresslayouts;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ArrayRes;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
@@ -40,8 +45,50 @@ public class ProgressLinearLayout extends LinearLayout implements ProgressLayout
     }
 
     @Override
-    public void setLoadingMessage(String message) {
-        progressLayoutHelper.setLoadingMessage(message);
+    public void setLoadingText(CharSequence text) {
+        progressLayoutHelper.setLoadingText(text);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingText(@StringRes int resId) {
+        progressLayoutHelper.setLoadingText(resId);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingTextAppearance(@StyleRes int resId) {
+        progressLayoutHelper.setLoadingTextAppearance(resId);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorColor(@ColorInt int color) {
+        progressLayoutHelper.setLoadingIndicatorColor(color);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
+        progressLayoutHelper.setLoadingIndicatorColorScheme(colors);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorDrawable(@DrawableRes int resId) {
+        progressLayoutHelper.setLoadingIndicatorDrawable(resId);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorDrawable(Drawable drawable) {
+        progressLayoutHelper.setLoadingIndicatorDrawable(drawable);
         requestLayout();
         invalidate();
     }

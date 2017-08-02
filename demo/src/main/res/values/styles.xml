@@ -19,7 +19,7 @@
     </style>
 
     <style name="AppTheme.ProgressLayout">
-        <item name="android:textAppearance">@style/AppTheme.Text.Loader</item>
+        <item name="loadingTextAppearance">@style/AppTheme.Text.Loader</item>
     </style>
 
 </resources>

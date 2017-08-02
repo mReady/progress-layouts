@@ -6,6 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ArrayRes;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.annotation.StyleRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.text.Layout;
 import android.util.AttributeSet;
@@ -38,12 +45,12 @@ public class ProgressLayoutHelper {
                 R.attr.progressLayoutStyle, 0);
 
         if (!viewGroup.isInEditMode()) {
-            drawable = a.getDrawable(R.styleable.ProgressLayout_progressDrawable);
+            drawable = a.getDrawable(R.styleable.ProgressLayout_loadingIndicatorDrawable);
 
             if (drawable == null) {
                 drawable = new MaterialProgressDrawable(context);
 
-                int colorListRes = a.getResourceId(R.styleable.ProgressLayout_progressColorList, -1);
+                int colorListRes = a.getResourceId(R.styleable.ProgressLayout_loadingIndicatorColorScheme, -1);
                 if (colorListRes != -1) {
                     int[] colorList = context.getResources().getIntArray(colorListRes);
                     ((MaterialProgressDrawable) drawable).setColorSchemeColors(colorList);
@@ -54,15 +61,15 @@ public class ProgressLayoutHelper {
                         defaultColor = value.data;
                     }
 
-                    int color = a.getColor(R.styleable.ProgressLayout_progressColor, defaultColor);
+                    int color = a.getColor(R.styleable.ProgressLayout_loadingIndicatorColor, defaultColor);
                     ((MaterialProgressDrawable) drawable).setColorSchemeColors(color);
                 }
             }
 
             TextLayoutBuilder builder = new TextLayoutBuilder()
-                    .setText(a.getText(R.styleable.ProgressLayout_android_text));
+                    .setText(a.getText(R.styleable.ProgressLayout_loadingText));
 
-            textAppearance = a.getResourceId(R.styleable.ProgressLayout_android_textAppearance, -1);
+            textAppearance = a.getResourceId(R.styleable.ProgressLayout_loadingTextAppearance, -1);
             if (textAppearance != -1) {
                 ResourceTextLayoutHelper.setTextAppearance(builder, context, textAppearance);
             }
@@ -121,12 +128,47 @@ public class ProgressLayoutHelper {
         }
     }
 
-    public void setLoadingMessage(String message) {
-        TextLayoutBuilder builder = new TextLayoutBuilder().setText(message);
+    public void setLoadingText(CharSequence text) {
+        TextLayoutBuilder builder = new TextLayoutBuilder().setText(text);
         if (textAppearance != -1) {
             ResourceTextLayoutHelper.setTextAppearance(builder, viewGroup.getContext(), textAppearance);
         }
         textLayout = builder.build();
+    }
+
+    public void setLoadingText(@StringRes int text) {
+        setLoadingText(viewGroup.getResources().getString(text));
+    }
+
+    public void setLoadingTextAppearance(@StyleRes int textAppearance) {
+        this.textAppearance = textAppearance;
+
+        String message = "";
+        if (textLayout != null) {
+            message = textLayout.getText().toString();
+        }
+
+        setLoadingText(message);
+    }
+
+    public void setLoadingIndicatorColor(@ColorInt int color) {
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(color);
+        }
+    }
+
+    public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
+        }
+    }
+
+    public void setLoadingIndicatorDrawable(@DrawableRes int drawableRes) {
+        drawable = ContextCompat.getDrawable(viewGroup.getContext(), drawableRes);
+    }
+
+    public void setLoadingIndicatorDrawable(Drawable drawable) {
+        this.drawable = drawable;
     }
 
     public void measure(int widthMeasureSpec, int heightMeasureSpec) {

@@ -2,11 +2,11 @@
 <resources>
 
     <declare-styleable name="ProgressLayout">
-        <attr name="android:textAppearance" />
-        <attr name="android:text" />
-        <attr name="progressDrawable" format="reference" />
-        <attr name="progressColor" format="color" />
-        <attr name="progressColorList" format="reference" />
+        <attr name="loadingIndicatorColor" format="color" />
+        <attr name="loadingIndicatorColorScheme" format="reference" />
+        <attr name="loadingIndicatorDrawable" format="reference" />
+        <attr name="loadingText" format="string" />
+        <attr name="loadingTextAppearance" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="ProgressLayoutTheme">
