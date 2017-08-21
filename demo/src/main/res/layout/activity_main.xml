@@ -74,7 +74,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#4190b7"
-            app:loadingIndicatorDrawable="@drawable/loader_logo" />
+            app:loadingIndicatorDrawable="@drawable/loader_logo"
+            app:loadingText="Please wait" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
             android:id="@+id/progress_layout_7"
