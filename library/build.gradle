@@ -13,6 +13,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:26.0.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.1.0'
 }
