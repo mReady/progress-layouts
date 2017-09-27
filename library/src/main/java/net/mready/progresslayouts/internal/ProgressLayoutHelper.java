@@ -10,6 +10,7 @@ import android.support.annotation.ArrayRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.RestrictTo;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.support.v4.content.ContextCompat;
@@ -24,6 +25,7 @@ import com.facebook.fbui.textlayoutbuilder.TextLayoutBuilder;
 
 import net.mready.progresslayouts.R;
 
+@RestrictTo({RestrictTo.Scope.LIBRARY})
 public class ProgressLayoutHelper {
 
     private static final int DRAWABLE_MAX_LEVEL = 10000;
