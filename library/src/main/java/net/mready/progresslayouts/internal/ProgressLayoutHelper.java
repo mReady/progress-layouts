@@ -67,6 +67,7 @@ public class ProgressLayoutHelper {
             }
 
             TextLayoutBuilder builder = new TextLayoutBuilder()
+                    .setTextSize(resources.getDimensionPixelSize(R.dimen.default_loading_text_size))
                     .setText(a.getText(R.styleable.ProgressLayout_loadingText));
 
             textAppearance = a.getResourceId(R.styleable.ProgressLayout_loadingTextAppearance, -1);
