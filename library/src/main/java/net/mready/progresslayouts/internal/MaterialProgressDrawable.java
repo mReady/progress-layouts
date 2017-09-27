@@ -16,6 +16,7 @@
  * With some modifications made by mReady under Apache License, Version 2.0
  *
  */
+
 package net.mready.progresslayouts.internal;
 
 import android.animation.Animator;
