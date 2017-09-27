@@ -1,9 +1,9 @@
 package net.mready.progresslayouts.internal;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ArrayRes;
@@ -40,6 +40,7 @@ public class ProgressLayoutHelper {
         this.viewGroup = viewGroup;
 
         Context context = viewGroup.getContext();
+        Resources resources = context.getResources();
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProgressLayout,
                 R.attr.progressLayoutStyle, 0);
@@ -52,10 +53,10 @@ public class ProgressLayoutHelper {
 
                 int colorListRes = a.getResourceId(R.styleable.ProgressLayout_loadingIndicatorColorScheme, -1);
                 if (colorListRes != -1) {
-                    int[] colorList = context.getResources().getIntArray(colorListRes);
+                    int[] colorList = resources.getIntArray(colorListRes);
                     ((MaterialProgressDrawable) drawable).setColorSchemeColors(colorList);
                 } else {
-                    int defaultColor = Color.BLUE;
+                    int defaultColor = ContextCompat.getColor(context, R.color.default_loading_indicator_color);
                     TypedValue value = new TypedValue();
                     if (context.getTheme().resolveAttribute(R.attr.colorAccent, value, true)) {
                         defaultColor = value.data;
