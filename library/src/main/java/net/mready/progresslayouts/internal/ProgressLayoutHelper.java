@@ -196,13 +196,7 @@ public class ProgressLayoutHelper {
     }
 
     public void layout(boolean changed, int left, int top, int right, int bottom) {
-        int drawableLeft = viewGroup.getWidth() / 2 - drawable.getIntrinsicWidth() / 2;
-        int drawableTop = viewGroup.getHeight() / 2 - drawable.getIntrinsicHeight() / 2;
-
-        drawable.setBounds(drawableLeft,
-                drawableTop,
-                drawableLeft + drawable.getIntrinsicWidth(),
-                drawableTop + drawable.getIntrinsicHeight());
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
     }
 
     public void draw(Canvas canvas) {
@@ -214,15 +208,19 @@ public class ProgressLayoutHelper {
             drawable.setLevel(level + DRAWABLE_LEVEL_INCREMENT);
         }
 
+        int state;
+
+        state = canvas.save();
+        canvas.translate(canvas.getWidth() / 2 - drawable.getIntrinsicWidth() / 2,
+                canvas.getHeight() / 2 - drawable.getIntrinsicHeight() / 2);
         drawable.draw(canvas);
+        canvas.restoreToCount(state);
 
         if (textLayout != null) {
-            int state = canvas.save();
-
+            state = canvas.save();
             canvas.translate(canvas.getWidth() / 2 - textLayout.getWidth() / 2,
                     canvas.getHeight() / 2 + drawable.getIntrinsicHeight() / 2);
             textLayout.draw(canvas);
-
             canvas.restoreToCount(state);
         }
 
