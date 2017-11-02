@@ -54,6 +54,9 @@ public class ProgressLayoutHelper {
     private int textAppearance;
     private boolean loading;
 
+    private int scrollX;
+    private int scrollY;
+
     public ProgressLayoutHelper(final ViewGroup viewGroup, AttributeSet attrs) {
         this.viewGroup = viewGroup;
 
@@ -197,6 +200,9 @@ public class ProgressLayoutHelper {
 
     public void layout(boolean changed, int left, int top, int right, int bottom) {
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+
+        scrollX = viewGroup.getScrollX();
+        scrollY = viewGroup.getScrollY();
     }
 
     public void draw(Canvas canvas) {
@@ -208,18 +214,21 @@ public class ProgressLayoutHelper {
             drawable.setLevel(level + DRAWABLE_LEVEL_INCREMENT);
         }
 
+        int viewGroupWidth = viewGroup.getWidth();
+        int viewGroupHeight = viewGroup.getHeight();
+
         int state;
 
         state = canvas.save();
-        canvas.translate(canvas.getWidth() / 2 - drawable.getIntrinsicWidth() / 2,
-                canvas.getHeight() / 2 - drawable.getIntrinsicHeight() / 2);
+        canvas.translate(viewGroupWidth / 2 - drawable.getIntrinsicWidth() / 2 + scrollX,
+                viewGroupHeight / 2 - drawable.getIntrinsicHeight() / 2 + scrollY);
         drawable.draw(canvas);
         canvas.restoreToCount(state);
 
         if (textLayout != null) {
             state = canvas.save();
-            canvas.translate(canvas.getWidth() / 2 - textLayout.getWidth() / 2,
-                    canvas.getHeight() / 2 + drawable.getIntrinsicHeight() / 2);
+            canvas.translate(viewGroupWidth / 2 - textLayout.getWidth() / 2 + scrollX,
+                    viewGroupHeight / 2 + drawable.getIntrinsicHeight() / 2 + scrollY);
             textLayout.draw(canvas);
             canvas.restoreToCount(state);
         }
