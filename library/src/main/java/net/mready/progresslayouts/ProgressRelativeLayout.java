@@ -72,8 +72,8 @@ public class ProgressRelativeLayout extends RelativeLayout implements ProgressLa
     }
 
     @Override
-    public void setLoadingText(@StringRes int resId) {
-        progressLayoutHelper.setLoadingText(resId);
+    public void setLoadingText(@StringRes int textResId) {
+        progressLayoutHelper.setLoadingText(textResId);
         requestLayout();
         invalidate();
     }
@@ -93,6 +93,13 @@ public class ProgressRelativeLayout extends RelativeLayout implements ProgressLa
     }
 
     @Override
+    public void setLoadingIndicatorColorRes(int colorResId) {
+        progressLayoutHelper.setLoadingIndicatorColorRes(colorResId);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
     public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
         progressLayoutHelper.setLoadingIndicatorColorScheme(colors);
         requestLayout();
@@ -100,8 +107,15 @@ public class ProgressRelativeLayout extends RelativeLayout implements ProgressLa
     }
 
     @Override
-    public void setLoadingIndicatorDrawable(@DrawableRes int resId) {
-        progressLayoutHelper.setLoadingIndicatorDrawable(resId);
+    public void setLoadingIndicatorColorResScheme(@NonNull int[] colorsResIds) {
+        progressLayoutHelper.setLoadingIndicatorColorResScheme(colorsResIds);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorDrawable(@DrawableRes int drawableResId) {
+        progressLayoutHelper.setLoadingIndicatorDrawable(drawableResId);
         requestLayout();
         invalidate();
     }

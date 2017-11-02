@@ -69,21 +69,33 @@ public class MainActivity extends AppCompatActivity {
         ((ProgressLayout) findViewById(R.id.progress_layout_6)).setLoading(true);
         ((ProgressLayout) findViewById(R.id.progress_layout_7)).setLoading(true);
 
+        // Only to demonstrate different customization options
         if (false) {
+            ProgressLayout progressLayout = findViewById(R.id.progress_layout_1);
+
             int[] colors = {
+                    R.color.color1,
+                    R.color.color2,
+                    R.color.color3
+            };
+
+            int[] resolvedColors = {
                     ContextCompat.getColor(this, R.color.color1),
                     ContextCompat.getColor(this, R.color.color2),
                     ContextCompat.getColor(this, R.color.color3)
             };
 
-            ProgressLayout progressLayout = findViewById(R.id.progress_layout_1);
-
             progressLayout.setLoadingIndicatorColor(Color.parseColor("00ff00"));
             progressLayout.setLoadingIndicatorColor(ContextCompat.getColor(this, R.color.colorAccent));
+            progressLayout.setLoadingIndicatorColorRes(R.color.colorAccent);
+
             progressLayout.setLoadingIndicatorColorScheme(getResources().getIntArray(R.array.loader_colors));
-            progressLayout.setLoadingIndicatorColorScheme(colors);
+            progressLayout.setLoadingIndicatorColorScheme(resolvedColors);
+            progressLayout.setLoadingIndicatorColorResScheme(colors);
+
             progressLayout.setLoadingIndicatorDrawable(R.drawable.loader_circle);
             progressLayout.setLoadingIndicatorDrawable(ContextCompat.getDrawable(this, R.drawable.loader_circle));
+
             progressLayout.setLoadingText("Please wait");
             progressLayout.setLoadingText(R.string.app_name);
             progressLayout.setLoadingTextAppearance(R.style.AppTheme_Text_Loader);

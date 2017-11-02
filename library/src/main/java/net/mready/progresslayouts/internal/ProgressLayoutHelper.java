@@ -24,6 +24,7 @@ import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.RestrictTo;
@@ -159,8 +160,8 @@ public class ProgressLayoutHelper {
         textLayout = builder.build();
     }
 
-    public void setLoadingText(@StringRes int text) {
-        setLoadingText(viewGroup.getResources().getString(text));
+    public void setLoadingText(@StringRes int textResId) {
+        setLoadingText(viewGroup.getResources().getString(textResId));
     }
 
     public void setLoadingTextAppearance(@StyleRes int textAppearance) {
@@ -180,14 +181,31 @@ public class ProgressLayoutHelper {
         }
     }
 
+    public void setLoadingIndicatorColorRes(@ColorRes int colorResId) {
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable)
+                    .setColorSchemeColors(ContextCompat.getColor(viewGroup.getContext(), colorResId));
+        }
+    }
+
     public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
         if (drawable instanceof MaterialProgressDrawable) {
             ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 
-    public void setLoadingIndicatorDrawable(@DrawableRes int drawableRes) {
-        drawable = ContextCompat.getDrawable(viewGroup.getContext(), drawableRes);
+    public void setLoadingIndicatorColorResScheme(@NonNull @ArrayRes int[] colorsResIds) {
+        if (drawable instanceof MaterialProgressDrawable) {
+            int[] resolvedColors = new int[colorsResIds.length];
+            for (int i = 0; i < colorsResIds.length; i++) {
+                resolvedColors[i] = ContextCompat.getColor(viewGroup.getContext(), colorsResIds[i]);
+            }
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(resolvedColors);
+        }
+    }
+
+    public void setLoadingIndicatorDrawable(@DrawableRes int drawableResId) {
+        drawable = ContextCompat.getDrawable(viewGroup.getContext(), drawableResId);
     }
 
     public void setLoadingIndicatorDrawable(Drawable drawable) {
