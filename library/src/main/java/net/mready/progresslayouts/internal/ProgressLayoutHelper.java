@@ -188,19 +188,26 @@ public class ProgressLayoutHelper {
         }
     }
 
-    public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
+    public void setLoadingIndicatorColorResScheme(@ArrayRes int colorArrayResId) {
+        if (drawable instanceof MaterialProgressDrawable) {
+            int[] colors = viewGroup.getResources().getIntArray(colorArrayResId);
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
+        }
+    }
+
+    public void setLoadingIndicatorColorScheme(@NonNull int[] colors) {
         if (drawable instanceof MaterialProgressDrawable) {
             ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 
-    public void setLoadingIndicatorColorResScheme(@NonNull @ArrayRes int[] colorsResIds) {
+    public void setLoadingIndicatorColorResScheme(@NonNull int[] colorsResIds) {
         if (drawable instanceof MaterialProgressDrawable) {
-            int[] resolvedColors = new int[colorsResIds.length];
+            int[] colors = new int[colorsResIds.length];
             for (int i = 0; i < colorsResIds.length; i++) {
-                resolvedColors[i] = ContextCompat.getColor(viewGroup.getContext(), colorsResIds[i]);
+                colors[i] = ContextCompat.getColor(viewGroup.getContext(), colorsResIds[i]);
             }
-            ((MaterialProgressDrawable) drawable).setColorSchemeColors(resolvedColors);
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 

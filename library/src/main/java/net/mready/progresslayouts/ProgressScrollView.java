@@ -86,13 +86,6 @@ public class ProgressScrollView extends ScrollView implements ProgressLayout {
     }
 
     @Override
-    public void setLoadingIndicatorColor(@ColorInt int color) {
-        progressLayoutHelper.setLoadingIndicatorColor(color);
-        requestLayout();
-        invalidate();
-    }
-
-    @Override
     public void setLoadingIndicatorColorRes(int colorResId) {
         progressLayoutHelper.setLoadingIndicatorColorRes(colorResId);
         requestLayout();
@@ -100,8 +93,15 @@ public class ProgressScrollView extends ScrollView implements ProgressLayout {
     }
 
     @Override
-    public void setLoadingIndicatorColorScheme(@NonNull @ArrayRes int[] colors) {
-        progressLayoutHelper.setLoadingIndicatorColorScheme(colors);
+    public void setLoadingIndicatorColor(@ColorInt int color) {
+        progressLayoutHelper.setLoadingIndicatorColor(color);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorColorResScheme(@ArrayRes int colorArrayResId) {
+        progressLayoutHelper.setLoadingIndicatorColorResScheme(colorArrayResId);
         requestLayout();
         invalidate();
     }
@@ -109,6 +109,13 @@ public class ProgressScrollView extends ScrollView implements ProgressLayout {
     @Override
     public void setLoadingIndicatorColorResScheme(@NonNull int[] colorsResIds) {
         progressLayoutHelper.setLoadingIndicatorColorResScheme(colorsResIds);
+        requestLayout();
+        invalidate();
+    }
+
+    @Override
+    public void setLoadingIndicatorColorScheme(@NonNull int[] colors) {
+        progressLayoutHelper.setLoadingIndicatorColorScheme(colors);
         requestLayout();
         invalidate();
     }

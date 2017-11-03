@@ -19,9 +19,9 @@
 <resources>
 
     <array name="loader_colors">
-        <item>#ccb34d</item>
-        <item>#ca6767</item>
-        <item>#8da361</item>
+        <item>@color/color1</item>
+        <item>@color/color2</item>
+        <item>@color/color3</item>
     </array>
 
 </resources>
