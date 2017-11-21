@@ -28,6 +28,15 @@ import net.mready.progresslayouts.ProgressLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO: Rename
+    private ProgressLayout progressLayout1;
+    private ProgressLayout progressLayout2;
+    private ProgressLayout progressLayout3;
+    private ProgressLayout progressLayout4;
+    private ProgressLayout progressLayout5;
+    private ProgressLayout progressLayout6;
+    private ProgressLayout progressLayout7;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toggle:
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_1)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_2)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_3)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_4)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_5)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_6)));
-                toggleLoadingState(((ProgressLayout) findViewById(R.id.progress_layout_7)));
+                toggleLoadingState(progressLayout1);
+                toggleLoadingState(progressLayout2);
+                toggleLoadingState(progressLayout3);
+                toggleLoadingState(progressLayout4);
+                toggleLoadingState(progressLayout5);
+                toggleLoadingState(progressLayout6);
+                toggleLoadingState(progressLayout7);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -61,18 +70,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupProgressLayouts() {
-        ((ProgressLayout) findViewById(R.id.progress_layout_1)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_2)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_3)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_4)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_5)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_6)).setLoading(true);
-        ((ProgressLayout) findViewById(R.id.progress_layout_7)).setLoading(true);
+        progressLayout1 = findViewById(R.id.progress_layout_1);
+        progressLayout2 = findViewById(R.id.progress_layout_2);
+        progressLayout3 = findViewById(R.id.progress_layout_3);
+        progressLayout4 = findViewById(R.id.progress_layout_4);
+        progressLayout5 = findViewById(R.id.progress_layout_5);
+        progressLayout6 = findViewById(R.id.progress_layout_6);
+        progressLayout7 = findViewById(R.id.progress_layout_7);
+
+        progressLayout1.setLoading(true);
+        progressLayout2.setLoading(true);
+        progressLayout3.setLoading(true);
+        progressLayout4.setLoading(true);
+        progressLayout5.setLoading(true);
+        progressLayout6.setLoading(true);
+        progressLayout7.setLoading(true);
 
         // Only to demonstrate different customization options
         if (false) {
-            ProgressLayout progressLayout = findViewById(R.id.progress_layout_1);
-
             int[] colorsResIds = {
                     R.color.color1,
                     R.color.color2,
@@ -85,21 +100,21 @@ public class MainActivity extends AppCompatActivity {
                     ContextCompat.getColor(this, R.color.color3)
             };
 
-            progressLayout.setLoadingIndicatorColorRes(R.color.colorAccent);
-            progressLayout.setLoadingIndicatorColor(Color.parseColor("00ff00"));
-            progressLayout.setLoadingIndicatorColor(ContextCompat.getColor(this, R.color.colorAccent));
+            progressLayout1.setLoadingIndicatorColorRes(R.color.colorAccent);
+            progressLayout1.setLoadingIndicatorColor(Color.parseColor("00ff00"));
+            progressLayout1.setLoadingIndicatorColor(ContextCompat.getColor(this, R.color.colorAccent));
 
-            progressLayout.setLoadingIndicatorColorResScheme(R.array.loader_colors);
-            progressLayout.setLoadingIndicatorColorResScheme(colorsResIds);
-            progressLayout.setLoadingIndicatorColorScheme(getResources().getIntArray(R.array.loader_colors));
-            progressLayout.setLoadingIndicatorColorScheme(colors);
+            progressLayout1.setLoadingIndicatorColorResScheme(R.array.loader_colors);
+            progressLayout1.setLoadingIndicatorColorResScheme(colorsResIds);
+            progressLayout1.setLoadingIndicatorColorScheme(getResources().getIntArray(R.array.loader_colors));
+            progressLayout1.setLoadingIndicatorColorScheme(colors);
 
-            progressLayout.setLoadingIndicatorDrawable(R.drawable.loader_circle);
-            progressLayout.setLoadingIndicatorDrawable(ContextCompat.getDrawable(this, R.drawable.loader_circle));
+            progressLayout1.setLoadingIndicatorDrawable(R.drawable.loader_circle);
+            progressLayout1.setLoadingIndicatorDrawable(ContextCompat.getDrawable(this, R.drawable.loader_circle));
 
-            progressLayout.setLoadingText("Please wait");
-            progressLayout.setLoadingText(R.string.message_loading);
-            progressLayout.setLoadingTextAppearance(R.style.AppTheme_Text_Loader);
+            progressLayout1.setLoadingText("Please wait");
+            progressLayout1.setLoadingText(R.string.message_loading);
+            progressLayout1.setLoadingTextAppearance(R.style.AppTheme_Text_Loader);
         }
     }
 
