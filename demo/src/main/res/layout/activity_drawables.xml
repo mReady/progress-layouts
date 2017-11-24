@@ -30,7 +30,7 @@
         android:orientation="horizontal">
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_1"
+            android:id="@+id/layout_rotate_drawable"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -38,12 +38,13 @@
             app:loadingIndicatorDrawable="@drawable/loader_circle" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_2"
+            android:id="@+id/layout_rotate_drawable_text"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#678493"
-            app:loadingIndicatorDrawable="@drawable/loader_circle" />
+            app:loadingIndicatorDrawable="@drawable/loader_circle"
+            app:loadingText="@string/message_loading" />
 
     </LinearLayout>
 
@@ -54,23 +55,23 @@
         android:orientation="horizontal">
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_3"
+            android:id="@+id/layout_material_drawable"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#2a3941" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_4"
+            android:id="@+id/layout_material_drawable_color"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#0c5c84"
             app:loadingIndicatorColor="#ffffff"
-            app:loadingText="Please wait" />
+            app:loadingText="@string/message_loading" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_5"
+            android:id="@+id/layouts_material_drawable_color_scheme"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -87,7 +88,7 @@
         android:orientation="horizontal">
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_6"
+            android:id="@+id/layout_animation_drawable"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -96,12 +97,11 @@
             app:loadingText="Please wait" />
 
         <net.mready.progresslayouts.ProgressFrameLayout
-            android:id="@+id/progress_layout_7"
+            android:id="@+id/layout_lottie_drawable"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#064666"
-            app:loadingIndicatorDrawable="@drawable/loader_logo" />
+            android:background="#064666" />
 
     </LinearLayout>
 

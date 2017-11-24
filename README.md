@@ -1,10 +1,10 @@
 # Progress Layouts
 
-An Android library which provides a collection of the most common ViewGroups, extended with the capability of easily switching to a loading state, in which the original content is hidden and a loading indicator is displayed in the center of the view.
+An Android library which provides a collection of the most common layouts, extended with the capability of easily switching to a loading state, in which the original content is hidden and a loading indicator is displayed in the center of the view.
+
+<img src="art/demo.gif"/>
 
 Requires API level 16 or higher.
-
-TODO GIF
 
 ## Features
 
@@ -13,6 +13,16 @@ TODO GIF
 - Color and color scheme customization for the default loading indicator
 - Custom drawable as the loading indicator
 - Optional message beneath the loading indicator
+
+## Setup
+
+Add the following dependency to your `build.gradle` file:
+
+```groovy
+dependencies {
+    compile 'net.mready.progresslayouts:progresslayouts:1.0.0'
+}
+```
 
 ## Usage
 
@@ -123,16 +133,6 @@ You can set a theme-wide style for all the progress layouts:
 <style name="AppTheme.ProgressLayout">
     <!-- customize your progress layout here -->
 </style>
-```
-
-## Setup
-
-Add the following dependency to your `build.gradle` file:
-
-```groovy
-dependencies {
-    compile 'net.mready.progresslayouts:progresslayouts:1.0.0'
-}
 ```
 
 ## Limitations

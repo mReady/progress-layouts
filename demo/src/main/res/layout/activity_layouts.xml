@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2017 mReady
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <net.mready.progresslayouts.ProgressFrameLayout
+            android:id="@+id/progress_frame_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#bf360c">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:background="#d16649" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="center"
+                android:text="FrameLayout"
+                android:textColor="@android:color/white" />
+
+        </net.mready.progresslayouts.ProgressFrameLayout>
+
+        <net.mready.progresslayouts.ProgressLinearLayout
+            android:id="@+id/progress_linear_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00acc1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal|top"
+                android:background="#98d9ad"
+                android:gravity="center"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal|top"
+                android:background="#8c1f1f"
+                android:gravity="center"
+                android:text="LinearLayout"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal|top"
+                android:background="#d16649"
+                android:gravity="center"
+                android:textColor="@android:color/white" />
+
+        </net.mready.progresslayouts.ProgressLinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <net.mready.progresslayouts.ProgressRelativeLayout
+            android:id="@+id/progress_relative_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#63b967"
+            app:loadingText="Please wait">
+
+            <TextView
+                android:id="@+id/a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#8c1f1f"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="RelativeLayout"
+                android:textColor="@android:color/white" />
+
+            <FrameLayout
+                android:id="@+id/b"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_above="@id/a"
+                android:layout_alignRight="@id/a"
+                android:background="#98d9ad" />
+
+            <FrameLayout
+                android:id="@+id/c"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_alignLeft="@id/a"
+                android:layout_below="@id/a"
+                android:background="#d16649" />
+
+        </net.mready.progresslayouts.ProgressRelativeLayout>
+
+        <net.mready.progresslayouts.ProgressScrollView
+            android:id="@+id/progress_scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#8362bc"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00acc1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#d16649"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#98d9ad"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#d16649"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#98d9ad"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#d16649"
+                    android:gravity="center"
+                    android:text="ScrollView"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#98d9ad"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="#d16649"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </net.mready.progresslayouts.ProgressScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_toggle_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_toggle"
+        android:text="Toggle loading state" />
+
+</LinearLayout>
