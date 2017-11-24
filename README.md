@@ -1,6 +1,6 @@
 # Progress Layouts
 
-An Android library which provides a collection of the most common layouts, extended with the capability of easily switching to a loading state, in which the original content is hidden and a loading indicator is displayed in the center of the view.
+An Android library which provides a collection of the most common layouts, extended with the capability of easily switching to a loading state, in which the content is hidden and a loading indicator is displayed in the center of the view.
 
 <img src="art/demo.gif"/>
 
