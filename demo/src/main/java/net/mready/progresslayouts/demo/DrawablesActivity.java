@@ -16,6 +16,7 @@
 
 package net.mready.progresslayouts.demo;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -99,7 +100,7 @@ public class DrawablesActivity extends AppCompatActivity {
                     @Override
                     public void onCompositionLoaded(@Nullable LottieComposition composition) {
                         lottieDrawable.setComposition(composition);
-                        lottieDrawable.loop(true);
+                        lottieDrawable.setRepeatCount(ValueAnimator.INFINITE);
                         lottieDrawable.playAnimation();
                     }
                 });

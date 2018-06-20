@@ -20,7 +20,7 @@ Add the following dependency to your `build.gradle` file:
 
 ```groovy
 dependencies {
-    compile 'net.mready.progresslayouts:progresslayouts:1.0.0'
+    compile 'net.mready.progresslayouts:progresslayouts:1.1.0'
 }
 ```
 
@@ -132,6 +132,7 @@ You can set a theme-wide style for all the progress layouts:
 
 <style name="AppTheme.ProgressLayout">
     <!-- customize your progress layout here -->
+    <item name="loadingIndicatorDrawable">@drawable/loader</item>
 </style>
 ```
 
