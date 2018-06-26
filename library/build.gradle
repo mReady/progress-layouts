@@ -13,7 +13,7 @@ android {
 
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.2.0'
+    implementation 'com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.4.0'
 }
 
 task androidJavadocs(type: Javadoc) {
