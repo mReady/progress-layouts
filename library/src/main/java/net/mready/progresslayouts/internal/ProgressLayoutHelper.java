@@ -22,20 +22,21 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ArrayRes;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.RestrictTo;
-import android.support.annotation.StringRes;
-import android.support.annotation.StyleRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.text.Layout;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.ViewGroup;
+
+import androidx.annotation.ArrayRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.RestrictTo;
+import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import com.facebook.fbui.textlayoutbuilder.ResourceTextLayoutHelper;
 import com.facebook.fbui.textlayoutbuilder.TextLayoutBuilder;
@@ -71,12 +72,12 @@ public class ProgressLayoutHelper {
             drawable = a.getDrawable(R.styleable.ProgressLayout_loadingIndicatorDrawable);
 
             if (drawable == null) {
-                drawable = new CircularProgressDrawable(context);
+                drawable = new MaterialProgressDrawable(context);
 
                 int colorListRes = a.getResourceId(R.styleable.ProgressLayout_loadingIndicatorColorScheme, -1);
                 if (colorListRes != -1) {
                     int[] colorList = resources.getIntArray(colorListRes);
-                    ((CircularProgressDrawable) drawable).setColorSchemeColors(colorList);
+                    ((MaterialProgressDrawable) drawable).setColorSchemeColors(colorList);
                 } else {
                     int defaultColor = ContextCompat.getColor(context, R.color.default_loading_indicator_color);
                     TypedValue value = new TypedValue();
@@ -85,7 +86,7 @@ public class ProgressLayoutHelper {
                     }
 
                     int color = a.getColor(R.styleable.ProgressLayout_loadingIndicatorColor, defaultColor);
-                    ((CircularProgressDrawable) drawable).setColorSchemeColors(color);
+                    ((MaterialProgressDrawable) drawable).setColorSchemeColors(color);
                 }
             }
 
@@ -176,38 +177,38 @@ public class ProgressLayoutHelper {
     }
 
     public void setLoadingIndicatorColor(@ColorInt int color) {
-        if (drawable instanceof CircularProgressDrawable) {
-            ((CircularProgressDrawable) drawable).setColorSchemeColors(color);
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(color);
         }
     }
 
     public void setLoadingIndicatorColorRes(@ColorRes int colorResId) {
-        if (drawable instanceof CircularProgressDrawable) {
-            ((CircularProgressDrawable) drawable)
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable)
                     .setColorSchemeColors(ContextCompat.getColor(viewGroup.getContext(), colorResId));
         }
     }
 
     public void setLoadingIndicatorColorResScheme(@ArrayRes int colorArrayResId) {
-        if (drawable instanceof CircularProgressDrawable) {
+        if (drawable instanceof MaterialProgressDrawable) {
             int[] colors = viewGroup.getResources().getIntArray(colorArrayResId);
-            ((CircularProgressDrawable) drawable).setColorSchemeColors(colors);
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 
     public void setLoadingIndicatorColorScheme(@NonNull int[] colors) {
-        if (drawable instanceof CircularProgressDrawable) {
-            ((CircularProgressDrawable) drawable).setColorSchemeColors(colors);
+        if (drawable instanceof MaterialProgressDrawable) {
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 
     public void setLoadingIndicatorColorResScheme(@NonNull int[] colorsResIds) {
-        if (drawable instanceof CircularProgressDrawable) {
+        if (drawable instanceof MaterialProgressDrawable) {
             int[] colors = new int[colorsResIds.length];
             for (int i = 0; i < colorsResIds.length; i++) {
                 colors[i] = ContextCompat.getColor(viewGroup.getContext(), colorsResIds[i]);
             }
-            ((CircularProgressDrawable) drawable).setColorSchemeColors(colors);
+            ((MaterialProgressDrawable) drawable).setColorSchemeColors(colors);
         }
     }
 
