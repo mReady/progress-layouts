@@ -39,12 +39,14 @@ import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
+import androidx.annotation.RestrictTo;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-class MaterialProgressDrawable extends Drawable implements Animatable {
+@RestrictTo({RestrictTo.Scope.LIBRARY})
+public class MaterialProgressDrawable extends Drawable implements Animatable {
 
     private static final Interpolator LINEAR_INTERPOLATOR = new LinearInterpolator();
     private static final Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();

@@ -30,8 +30,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
 
-import net.mready.progresslayouts.internal.ProgressLayoutHelper;
-
 public class ProgressFrameLayout extends FrameLayout implements ProgressLayout {
 
     private final ProgressLayoutHelper progressLayoutHelper;

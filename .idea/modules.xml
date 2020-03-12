@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/progress-layouts.iml" filepath="$PROJECT_DIR$/progress-layouts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/progress-layouts.iml" filepath="$PROJECT_DIR$/progress-layouts.iml" group="progress-layouts" />
+      <module fileurl="file://$PROJECT_DIR$/demo/progress-layouts-demo.iml" filepath="$PROJECT_DIR$/demo/progress-layouts-demo.iml" group="progress-layouts/demo" />
+      <module fileurl="file://$PROJECT_DIR$/library/progress-layouts-library.iml" filepath="$PROJECT_DIR$/library/progress-layouts-library.iml" group="progress-layouts/library" />
     </modules>
   </component>
 </project>

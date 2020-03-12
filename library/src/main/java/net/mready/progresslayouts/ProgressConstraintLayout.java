@@ -21,7 +21,6 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.ScrollView;
 
 import androidx.annotation.ArrayRes;
 import androidx.annotation.ColorInt;
@@ -29,21 +28,22 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class ProgressScrollView extends ScrollView implements ProgressLayout {
+public class ProgressConstraintLayout extends ConstraintLayout implements ProgressLayout {
 
     private final ProgressLayoutHelper progressLayoutHelper;
     private boolean loading = false;
 
-    public ProgressScrollView(Context context) {
+    public ProgressConstraintLayout(Context context) {
         this(context, null, 0);
     }
 
-    public ProgressScrollView(Context context, AttributeSet attrs) {
+    public ProgressConstraintLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ProgressScrollView(Context context, AttributeSet attrs, int defStyle) {
+    public ProgressConstraintLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         progressLayoutHelper = new ProgressLayoutHelper(this, attrs);
@@ -134,7 +134,7 @@ public class ProgressScrollView extends ScrollView implements ProgressLayout {
     }
 
     @Override
-    protected void onAttachedToWindow() {
+    public void onAttachedToWindow() {
         super.onAttachedToWindow();
         progressLayoutHelper.attach();
     }
@@ -169,7 +169,7 @@ public class ProgressScrollView extends ScrollView implements ProgressLayout {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    public void dispatchDraw(Canvas canvas) {
         if (!loading) {
             super.dispatchDraw(canvas);
         } else {

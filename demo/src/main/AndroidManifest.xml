@@ -26,9 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".DrawablesActivity"
-            android:label="Demo Drawables">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,15 +34,9 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".LayoutsActivity"
-            android:label="Demo Layouts">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".DrawablesActivity" />
+        <activity android:name=".LayoutsActivity" />
+        <activity android:name=".SecondLayoutsActivity" />
 
     </application>
 

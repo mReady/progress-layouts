@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.mready.progresslayouts.internal;
+package net.mready.progresslayouts;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -32,7 +32,6 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
 import androidx.core.content.ContextCompat;
@@ -41,9 +40,8 @@ import androidx.core.view.ViewCompat;
 import com.facebook.fbui.textlayoutbuilder.ResourceTextLayoutHelper;
 import com.facebook.fbui.textlayoutbuilder.TextLayoutBuilder;
 
-import net.mready.progresslayouts.R;
+import net.mready.progresslayouts.internal.MaterialProgressDrawable;
 
-@RestrictTo({RestrictTo.Scope.LIBRARY})
 public class ProgressLayoutHelper {
 
     private static final int DRAWABLE_MAX_LEVEL = 10000;
